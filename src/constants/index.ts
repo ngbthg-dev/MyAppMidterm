@@ -1,0 +1,1 @@
+export {GlobalStyleVar} from "./GlobalStyleVar"
