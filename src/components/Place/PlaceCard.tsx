@@ -1,19 +1,25 @@
 import { StyleSheet, TouchableOpacity, Image, Text, View } from "react-native";
 import { GlobalStyleVar } from "../../constants";
+import { useNavigation } from "@react-navigation/native";
 
 interface PlaceCardProps
 {
 	style?: any
-	onPress?: (event: any) => void
 	image: string
 	locationName: string
 	pricePerHour: number
+	location: {
+		latitude: number,
+		longitude: number
+	}
 }
 
 function PlaceCard(props: PlaceCardProps)
 {
+	const navigation = useNavigation<any>()
+
 	return (
-		<TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+		<TouchableOpacity onPress={(event: any) => navigation.navigate('Map', props.location)} style={[styles.container, props.style]}>
 			<Text style={styles.locationName}>{props.locationName}</Text>
 			<View style={styles.locationInfo}>
 				<Text style={{color: "#0075fe", fontWeight: "bold"}}>2.5km</Text>

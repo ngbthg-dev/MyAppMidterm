@@ -5,32 +5,32 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 function PlaceList()
 {
-	const navigation = useNavigation<any>()
+
 
 	const placeList: PlaceCardProps[] = [
 		{
-			onPress: (event: any) => navigation.navigate('Map', {
+			location: {
 				latitude: 16.063011,
 				longitude: 108.243354
-			}),
+			},
 			image: "https://images.unsplash.com/photo-1600052300324-fa910a6be071?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
 			locationName: "Big C Super Market",
 			pricePerHour: 3,
 		},
 		{
-			onPress: (event: any) => navigation.navigate('Map', {
+			location: {
 				latitude: 16.058383,
 				longitude: 108.240247
-			}),
+			},
 			image: "https://images.unsplash.com/photo-1597736115102-34ad67aee75c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
 			locationName: "101B Le Huu Trac",
 			pricePerHour: 3,
 		},
 		{
-			onPress: (event: any) => navigation.navigate('Map', {
+			location: {
 				latitude: 16.060910,
 				longitude: 108.240773
-			}),
+			},
 			image: "https://images.unsplash.com/photo-1417816491410-d61e1546e539?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
 			locationName: "San Bong WinWin",
 			pricePerHour: 3,
