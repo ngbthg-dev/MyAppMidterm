@@ -13,7 +13,7 @@ function HomeHeader()
 					<Text style={{color: GlobalStyleVar.colorB, fontWeight: "bold"}}>Your location</Text>
 					<View style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
 						<FontAwesomeIcon size={20} color={"#0075fe"} icon={faLocationDot}/>
-						<Text style={{color: "white", fontSize: 15, fontWeight: "bold"}}> 101B, Le Huu Trac</Text>
+						<Text style={{color: "white", fontSize: 15, fontWeight: "bold"}}> 99, To Hien Thanh</Text>
 					</View>
 				</View>
 				<Icon/>
