@@ -1,1 +1,1 @@
-export {PlaceCard} from "./PlaceCard"
+export {PlaceCard, type PlaceCardProps} from "./PlaceCard"

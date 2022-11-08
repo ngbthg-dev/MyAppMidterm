@@ -1,36 +1,34 @@
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
 import MapViewDirections from 'react-native-maps-directions';
 import { useState, useRef, useEffect } from "react";
 import Geolocation from '@react-native-community/geolocation';
 
-
-function Map()
+function Map({route}: any)
 {
 	const [pickupCords, setPickupCords] = useState({
 		latitude: 0,
 		longitude: 0,
-		latitudeDelta: 0,
-		longitudeDelta: 0
+		latitudeDelta: 0.01,
+		longitudeDelta: 0.01
 	})
 
 	const [dropLocationCords, setDropLocationCords] = useState({
-		latitude: 16.047079,
-		longitude: 108.206230,
-		latitudeDelta: 0,
-		longitudeDelta: 0
+		...route.params,
+		latitudeDelta: 0.01,
+		longitudeDelta: 0.01
 	})
 
 	const mapRef = useRef<any>()
 
 	useEffect(() => {
+		console.log(route.params);
 		Geolocation.getCurrentPosition(info => {
 			console.log(info);
 			setPickupCords((prevState) => ({
+				...prevState,
 				latitude: info.coords.latitude,
 				longitude: info.coords.longitude,
-				latitudeDelta: 0.0922,
-				longitudeDelta: 0.0421
 			}))
 		});
 	}, [])
